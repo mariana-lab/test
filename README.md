@@ -1,5 +1,15 @@
-# A First Edit
+# Project Title
 
-##A simple test for mantaray trial week
+Simple description of the project contents. The README.md file is written in a markup language - Markdown, and uses symbols to give format meaning. 
 
-nothing special at all^
+```
+# This is a title 1
+## This would be a title 2
+
+* this is an unordered list item
+* this aswell
+```
+
+## How to ...
+
+Explanations on how to use the project contents are welcome
