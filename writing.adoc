@@ -1,0 +1,160 @@
+= Writing 
+:toc:
+:imagesdir: ../images
+
+
+
+== FAQ
+****
+include::partials/faqs-writing.adoc[]
+****
+
+[#setup]
+== Setup
+
+. Clone the fork of the repo you want to contribute to: 
++
+[source, bash]
+----
+$git clone git@github.com:mariana-lab/bootcamp.git
+$git remote add upstream git@github.com:academia-de-codigo/bootcamp.git 
+----
++
+. Checkout to your branch
++
+[source, bash]
+----
+$cd bootcamp
+$git checkout -b docs/new-feature
+----
++
+. Edit `.adoc` files with vscode without any fear
++
+[source, bash]
+----
+$code .
+----
++
+. Install a previewer plugin to preview `.adoc` files with our CSS:
++
+****
+image::vscode-asciidoc-preview.png[]
+.⚠️Click *here* for all the steps to install `asciidoctor.asciidoctor-vscode` plugin:
+[%collapsible]
+====
+. Open our css link:{attachmentsdir}/adoc-ac.css[stylesheet,window="_blank"]
+. Save on your preferred location:
++
+[options="interactive"]
+* [x] right-click -> Save As... -> e.g. `/Users/marianabarros/ac-utils/adoc-ac.css`
+. Open `visual studio code` and go to extensions (⇧⌘X)
+. Search `asciidoctor.asciidoctor-vscode` extension and install
+. Restart `visual studio code`
+. Go to Settings (⌘,) -> User -> search `asciidoc` and modify:
++
+[options="interactive"]
+* [x] *Use_kroki* -> toggle to enable kroki diagrams
+* [x] Preview : *Use Editor Style* -> untoggle so we can be specify the css
+* [x] Preview : *Style* -> edit text field with complete path to css file - e.g. `/Users/marianabarros/ac-utils/adoc-ac.css`
++
+. Quit and re-open `visual studio code`
+. In any `.adoc` file use the (⇧⌘V) combination to *preview* in real time!! 🎉 
+. Split right for a even better experience 
+
+WARNING: `Visual studio code` preview doesn't recognize antora syntax to render images inside the folder `images` unless you add the "`:imagesdir: ../images`" attribute under the title of the document.
+====
+****
++
+. Commit your work and create a PR
++
+[source, bash]
+----
+$git add filed
+$git commit -m 'good message'
+----
++
+When the the changes are merged, the platform updates automatically due to antora & gitlab pipeline. 
+
+[IMPORTANT]
+.All documentation files:
+====
+* must be written in *asciiDoc markup language*. Check the xref:writing.adoc#docs-format[format] section.
+* must be organized by *antora's structure*. Check the xref:writing.adoc#projct-struct[structure] section.
+====
+
+[#docs-format]
+== Format
+
+Documentation is written in the AsciiDoc markup language - `.adoc` file extension - and is processed by the link:https://asciidoctor.org/[AsciiDoctor, window="_blank"] Ruby-based text processor. Antora uses it after fetching all `.adoc` files from the different repos.
+
+****
+.ℙ Text format
+[%collapsible]
+====
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#paragraphs[Paragraphs, window="_blank"] + 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#text-formatting[Text formatting, window="_blank"] + 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#document-header[Document header, window="_blank"] + 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#section-titles[Section titles, window="_blank"] + 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#breaks[Breaks, window="_blank"] + 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#literals-and-source-code[Literals and source code, window="_blank"] + 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#more-delimited-blocks[More delimited blocks, window="_blank"] + 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#admonitions[Admonitions, window="_blank"] + 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#tables[Tables, window="_blank"] +
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#lists[Lists, window="_blank"] +
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#text-replacements[Text replacements, window="_blank"] + 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#escaping-substitutions[Escaping substitutions, window="_blank"] + 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#bibliography[Bibliography, window="_blank"] + 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#section-footnotes[Footnotes, window="_blank"] + 
+====
+****
+
+****
+.🔈 Media
+[%collapsible]
+====
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#images[Images, window="_blank"] + 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#audio[Audio, window="_blank"] + 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#videos[Videos, window="_blank"] + 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#keyboard-button-and-menu-macros[Keyboard, button, and menu macros, window="_blank"] 
+
+TIP: It's easy to create flowcharts, class, state, relationship diagrams, and others with just text and code.
+Use link:https://mermaid-js.github.io/mermaid[mermaid, window="_blank"] syntax, and it's link:https://mermaid-js.github.io/mermaid-live-editor[online editor, window="_blank"] to start creating!
+[mermaid]
+....
+graph LR
+    J(You know what this is...) --> and -->
+    C -->|yes| D[nice, now go make one of these!]
+    C -->|yes| E[check all the other charts] -->|then| A[Look] -->|at| B(this!)
+    B --> C{Isn't this amazing?}
+    C -->|no| F[give it a go] -->|or| U(ask someone)
+....
+
+====
+****
+
+****
+.💭 Meta
+[%collapsible]
+====
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#links[Links, window="_blank"] + 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#automatic-toc[Automatic TOC, window="_blank"] + 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#includes[Includes, window="_blank"] + 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#ids-roles-and-options[IDs, roles, and options, window="_blank"] + 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#comments[Comments, window="_blank"] + 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#attributes-and-substitutions[Attributes and substitutions, window="_blank"] +
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#markdown-compatibility[Markdown compatibility, window="_blank"]
+====
+****
+
+Above there's a list of Elements you can write with asciidoc. + 
+Visit link:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc Syntax Quick Reference, window="_blank"] for a more in depth comprehension of the AsciiDoc.
+
+
+[#projct-struct]
+== Structure
+
+In order to be imported by Antora as an *antora component*, any project must comply to its expected structure.  
+
+include::schemes/antora-component-structure.adoc[]
+
+Learn more about it on the Antora section of the pipeline.
