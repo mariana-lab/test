@@ -10,7 +10,7 @@ body, html {
 html {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    font-size: .9375em;
+    font-size: 0.9375em;
     -webkit-text-size-adjust: 100%
 }
 
