@@ -13,4 +13,4 @@ ss
 
 ## How to ...
 
-Explanations on how to use the project contents are welcome
+Explanations on how to use the project contents are welcome.
