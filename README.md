@@ -6,7 +6,6 @@ Simple description of the project contents. The README.md file is written in a m
 # This is a title 1
 ## This would be a title 2
 
-ss
 * this is an unordered list item
 * this aswell
 ```
