@@ -20,5 +20,5 @@ jobs:
         webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
         color: "#ffffff"
         avatar_url: "https://avatars.githubusercontent.com/u/15912056?s=64&v=4"
-        username: ${{ github.event.name }}
-        message: "${{ github.event.author.name}} created a discussion: ${{ github.event.bodyText}}"
+        username: ${{ github.event_name }}
+        message: "${{ github.event.author_name}} created a discussion: ${{ github.event_bodyText}}"
