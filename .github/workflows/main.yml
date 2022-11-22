@@ -21,4 +21,4 @@ jobs:
         color: "#ffffff"
         avatar_url: "https://avatars.githubusercontent.com/u/15912056?s=64&v=4"
         username: ${{ github.event_name }}
-        message: "${{ github.event.author_name}} created a discussion: ${{ github.event_bodyText}}"
+        message: "${{ github.event.discussion.author_name}} created a discussion: ${{ github.event.discussion.bodyText}}"
