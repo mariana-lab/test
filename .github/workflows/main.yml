@@ -18,6 +18,6 @@ jobs:
       with:
         webhook_id: ${{ secrets.WEBHOOK_ID }}
         webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
-        color: "#48f442"
-        username: "GitHub Bot"
-        message: "A new commit has been pushed with custom color."
+        color: "#ffffff"
+        username: ${{ github.event_name }}
+        message: ${{ github.event }}
